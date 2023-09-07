@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_proyecto/pages/AlertDialog.dart';
+import 'package:widgets_proyecto/pages/CardClass.dart';
 
 class BNavigation extends StatefulWidget {
   const BNavigation({super.key});
@@ -13,7 +14,14 @@ class _BNavigationState extends State<BNavigation> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Alert(),
+    Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Alert(), CardC()],
+        ),
+      ),
+    ),
     Text(
       'Index 1: Trabajo',
       style: optionStyle,

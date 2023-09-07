@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_proyecto/pages/AlertDialog.dart';
 import 'package:widgets_proyecto/pages/BottomNavigationBar.dart';
 
 class Inicio extends StatefulWidget {
