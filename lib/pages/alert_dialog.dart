@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_proyecto/pages/CardClass.dart';
 
 class Alert extends StatefulWidget {
   const Alert({super.key});

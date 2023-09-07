@@ -16,7 +16,7 @@ class _CardCState extends State<CardC> {
         children: <Widget>[
           const ListTile(
             leading: Icon(Icons.album),
-            title: Text('Bosque de espinas'),
+            title: Text('Bosque de Espinas'),
             subtitle: Text('Musica por MissaSinfonia'),
           ),
           Row(

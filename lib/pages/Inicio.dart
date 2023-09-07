@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_proyecto/pages/BottomNavigationBar.dart';
+import 'package:widgets_proyecto/pages/bottom_navigation_bar.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});

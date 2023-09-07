@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_proyecto/pages/AlertDialog.dart';
-import 'package:widgets_proyecto/pages/CardClass.dart';
+import 'package:widgets_proyecto/pages/alert_dialog.dart';
+import 'package:widgets_proyecto/pages/card_class.dart';
+import 'package:widgets_proyecto/pages/check_box.dart';
 
 class BNavigation extends StatefulWidget {
   const BNavigation({super.key});
@@ -18,7 +19,13 @@ class _BNavigationState extends State<BNavigation> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Alert(), CardC()],
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Alert(), CheckBox()],
+            ),
+            CardC()
+          ],
         ),
       ),
     ),

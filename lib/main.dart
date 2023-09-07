@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_proyecto/pages/Inicio.dart';
+import 'package:widgets_proyecto/pages/inicio.dart';
 
 void main() => runApp(MyApp());
 
