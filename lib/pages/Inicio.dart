@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_proyecto/pages/AlertDialog.dart';
+import 'package:widgets_proyecto/pages/BottomNavigationBar.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -11,19 +12,6 @@ class Inicio extends StatefulWidget {
 class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pagina principal'),
-        backgroundColor: Colors.blue,
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Alert(),
-          ],
-        ),
-      ),
-    );
+    return BNavigation();
   }
 }
