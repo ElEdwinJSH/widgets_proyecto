@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widgets_proyecto/pages/alert_dialog.dart';
 import 'package:widgets_proyecto/pages/card_class.dart';
 import 'package:widgets_proyecto/pages/check_box.dart';
+import 'package:widgets_proyecto/pages/drawer.dart';
 import 'package:widgets_proyecto/pages/show_date_picker.dart';
 
 class BNavigation extends StatefulWidget {
@@ -31,10 +32,7 @@ class _BNavigationState extends State<BNavigation> {
       ),
     ),
     DatePicker(),
-    Text(
-      'Index 2: Escuela',
-      style: optionStyle,
-    ),
+    DrawerC(),
     Text(
       'Index 3: Ajustes',
       style: optionStyle,
