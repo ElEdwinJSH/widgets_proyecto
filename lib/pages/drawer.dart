@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_proyecto/pages/form_class.dart';
 
 class DrawerC extends StatefulWidget {
   const DrawerC({super.key});
@@ -17,8 +18,8 @@ class _DrawerCState extends State<DrawerC> {
       drawer: Drawer(
           child: ListView(
         padding: EdgeInsets.zero,
-        children: const <Widget>[
-          DrawerHeader(
+        children: <Widget>[
+          const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -31,10 +32,15 @@ class _DrawerCState extends State<DrawerC> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.message),
-            title: Text('Mensajes'),
+            //EN ESTE DENTRO DEL ON TAP SE PONE ESO PARA BUSCAR EL EL DE FORMCLASS DONDE TUVE QUE PONER UN SCAFOLD PARA QUE SE ABRIERA OTRA PAGINA
+            title: const Text('Form Class'),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const FormClass()));
+            },
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.settings),
             title: Text('Ajustes'),
           ),
