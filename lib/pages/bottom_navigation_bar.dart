@@ -15,6 +15,7 @@ class BNavigation extends StatefulWidget {
 
 class _BNavigationState extends State<BNavigation> {
   int _selecterIndex = 0;
+  // ignore: unused_field
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
