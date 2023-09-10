@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_proyecto/pages/form_class.dart';
+import 'package:widgets_proyecto/pages/form_field.dart';
 
 class DrawerC extends StatefulWidget {
   const DrawerC({super.key});
@@ -40,9 +41,13 @@ class _DrawerCState extends State<DrawerC> {
                   builder: (BuildContext context) => const FormClass()));
             },
           ),
-          const ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Ajustes'),
+          ListTile(
+            title: Text('Form Field'),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const FormFi()));
+            },
           ),
         ],
       )),
