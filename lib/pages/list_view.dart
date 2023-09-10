@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_proyecto/pages/radio_class.dart';
+import 'package:widgets_proyecto/pages/single_child_scroll_view.dart';
 
 class ListV extends StatefulWidget {
   const ListV({super.key});
@@ -26,10 +27,17 @@ class _ListVState extends State<ListV> {
                 builder: (BuildContext context) => const RadioI()));
           },
         ),
-        Container(
-          height: 50,
-          color: Colors.amber[500],
-          child: const Center(child: Text('Entry B')),
+        ListTile(
+          //EN ESTE DENTRO DEL ON TAP SE PONE ESO PARA BUSCAR EL EL DE FORMCLASS DONDE TUVE QUE PONER UN SCAFOLD PARA QUE SE ABRIERA OTRA PAGINA
+          title: const Center(
+            child: Text('Single Child Scroll View'),
+          ),
+          tileColor: Colors.amber,
+
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => const SingleScroll()));
+          },
         ),
         Container(
           height: 50,

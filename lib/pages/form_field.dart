@@ -23,46 +23,57 @@ class FormF extends StatefulWidget {
 }
 
 class _FormFState extends State<FormF> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController =
-      TextEditingController(); // Agregamos un controlador para obtener el valor del campo
+  final TextEditingController _textController = TextEditingController();
+  String _errorMessage = ''; // Agregamos una variable para el mensaje de error
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
-            controller:
-                _emailController, // Asociamos el controlador al TextFormField
-            decoration: const InputDecoration(
-              hintText: 'Enter your email',
+            controller: _textController,
+            decoration: InputDecoration(
+              labelText: 'Ingrese su nombre',
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-                if (_formKey.currentState!.validate()) {
-                  // Procesar los datos
-                  final emailValue = _emailController
-                      .text; // Obtener el valor del campo de correo electrónico
-                  debugPrint(
-                      'Email ingresado: $emailValue'); // Imprimir el valor del correo electrónico
-                }
-              },
-              child: const Text('Enviar'),
-            ),
+          SizedBox(height: 16.0),
+          ElevatedButton(
+            onPressed: () {
+              // Verificar si el campo de texto está vacío
+              if (_textController.text.isEmpty) {
+                setState(() {
+                  _errorMessage = 'Escriba texto';
+                });
+              } else {
+                // Acción a realizar cuando se presiona el botón
+                final enteredText = _textController.text;
+                showDialog(
+                  context: context,
+                  builder: (_) {
+                    return AlertDialog(
+                      title: Text('Texto Ingresado'),
+                      content: Text('Has ingresado: $enteredText'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Cerrar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
+            },
+            child: Text('Mostrar Texto'),
+          ),
+          // Mostrar el mensaje de error
+          Text(
+            _errorMessage,
+            style: TextStyle(color: Colors.red),
           ),
         ],
       ),
