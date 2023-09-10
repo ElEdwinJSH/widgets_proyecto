@@ -3,6 +3,7 @@ import 'package:widgets_proyecto/pages/alert_dialog.dart';
 import 'package:widgets_proyecto/pages/card_class.dart';
 import 'package:widgets_proyecto/pages/check_box.dart';
 import 'package:widgets_proyecto/pages/drawer.dart';
+import 'package:widgets_proyecto/pages/list_view.dart';
 import 'package:widgets_proyecto/pages/show_date_picker.dart';
 
 class BNavigation extends StatefulWidget {
@@ -33,10 +34,7 @@ class _BNavigationState extends State<BNavigation> {
     ),
     DatePicker(),
     DrawerC(),
-    Text(
-      'Index 3: Ajustes',
-      style: optionStyle,
-    ),
+    ListV(),
   ];
 
   void _onItemTapped(int index) {
